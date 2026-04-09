@@ -73,7 +73,6 @@ rescue LoadError
   end
 end
 
-
 ### SPEC TASKS
 # For coverage aggregation with SimpleCov merging:
 # - Each task uses a unique K_SOUP_COV_COMMAND_NAME so SimpleCov tracks them separately
