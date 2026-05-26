@@ -7,17 +7,33 @@
 # token-resolver will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
+gem_version =
+  if Gem.ruby_version >= Gem::Version.new("3.1")
+    # Loading Version into an anonymous module allows version.rb to get code coverage from SimpleCov!
+    # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
+    # See: https://github.com/panorama-ed/memo_wise/pull/397
+    Module.new.tap { |mod| Kernel.load("#{__dir__}/lib/token/resolver/version.rb", mod) }::Token::Resolver::Version::VERSION
+  else
+    # NOTE: Use __FILE__ or __dir__ until removal of Ruby 1.x support
+    # __dir__ introduced in Ruby 1.9.1
+    # lib = File.expand_path("../lib", __FILE__)
+    lib = File.expand_path("lib", __dir__)
+    $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+    require "token/resolver/version"
+    Token::Resolver::Version::VERSION
+  end
+
 Gem::Specification.new do |spec|
   spec.name = "token-resolver"
-  spec.version = Module.new.tap { |mod| Kernel.load("#{__dir__}/lib/token/resolver/version.rb", mod) }::Token::Resolver::Version::VERSION
+  spec.version = gem_version
   spec.authors = ["Peter H. Boling"]
   spec.email = ["floss@galtzo.com"]
 
   spec.summary = "🪙 Configurable PEG-based token parser and resolver for structured token detection and replacement in arbitrary text"
   spec.description = "🪙 Token::Resolver provides configurable PEG-based (parslet) parsing and resolution of structured tokens (e.g., {KJ|GEM_NAME}) in arbitrary text. Useful for template ETL pipelines where tokens in template files must be resolved before format-specific merging."
   spec.homepage = "https://github.com/kettle-rb/token-resolver"
-  spec.licenses = ["AGPL-3.0-only"]
-  spec.required_ruby_version = ">= 3.2.0"
+  spec.licenses = ["AGPL-3.0-only", "PolyForm-Small-Business-1.0.0"]
+  spec.required_ruby_version = ">= 2.4"
 
   # Linux distros often package gems and securely certify them independent
   #   of the official RubyGem certification process. Allowed via ENV["SKIP_GEM_SIGNING"]
@@ -48,13 +64,22 @@ Gem::Specification.new do |spec|
   spec.metadata["discord_uri"] = "https://discord.gg/3qme4XHNKN"
   spec.metadata["rubygems_mfa_required"] = "true"
 
+  enumerate_package_files = lambda do |root|
+    Dir.glob(File.join(root, "**", "*"), File::FNM_DOTMATCH).select do |path|
+      File.file?(path) && ![".", ".."].include?(File.basename(path))
+    end
+  end
+
   # Specify which files are part of the released package.
-  spec.files = Dir[
+  spec.files = [
     # Code / tasks / data (NOTE: exe/ is specified via spec.bindir and spec.executables below)
-    "lib/**/*.rb",
-    "lib/**/*.rake",
+    *enumerate_package_files.call("lib"),
+    # Executables and executable support scripts
+    *enumerate_package_files.call("exe"),
+    # Public certs for gem signing
+    *enumerate_package_files.call("certs"),
     # Signatures
-    "sig/**/*.rbs",
+    *enumerate_package_files.call("sig"),
   ]
 
   # Automatically included with gem package, no need to list again in files.
@@ -65,9 +90,8 @@ Gem::Specification.new do |spec|
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
     "FUNDING.md",
-    "LICENSE.txt",
+    "LICENSE.md",
     "README.md",
-    "REEK",
     "RUBOCOP.md",
     "SECURITY.md",
   ]
@@ -82,26 +106,24 @@ Gem::Specification.new do |spec|
     "--inline-source",
     "--quiet",
   ]
-  spec.require_paths = ["lib"]
   spec.bindir = "exe"
   # Listed files are the relative paths from bindir above.
   spec.executables = []
-
-  # Parser - PEG-based parsing
-  spec.add_dependency("parslet", "~> 2.0")                               # ruby >= 2.0.0
+  spec.require_paths = ["lib"]
 
   # Utilities
+  spec.add_dependency("parslet", "~> 2.0")                               # ruby >= 2.0.0
   spec.add_dependency("version_gem", "~> 1.1", ">= 1.1.9")              # ruby >= 2.2.0
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
   #       visibility and discoverability.
   #       However, development dependencies in gemspec will install on
   #       all versions of Ruby that will run in CI.
-  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 3.2.0.
-  #       This gem, and its gemspec development dependencies, will install on Ruby down to 3.2.0.
+  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 2.4.
+  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.4.
   #       Thus, dev dependencies in gemspec must have
   #
-  #       required_ruby_version ">= 3.2.0" (or lower)
+  #       required_ruby_version ">= 2.4" (or lower)
   #
   #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).

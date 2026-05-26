@@ -1,0 +1,66 @@
+{
+  "appraisal: \"dep-heads\"\nexec_cmd: \"kettle-test\"": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        44,
+        51,
+        58
+      ]
+    }
+  ],
+  "appraisal: \"head\"\nexec_cmd: \"kettle-test\"": [
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        43,
+        50,
+        57
+      ]
+    }
+  ],
+  "benchmark_files = Dir[File.join(__dir__, \"benchmarks\", \"*.rb\")]\nif benchmark_files.empty?": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        118,
+        143
+      ]
+    }
+  ],
+  "exec_cmd: \"kettle-test\"\nrubygems: default": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        52,
+        59
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        44,
+        51,
+        58
+      ]
+    }
+  ],
+  "if ENV[\"CI\"]\nputs \"Skipping benchmarks in CI environment\"": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        131,
+        140
+      ]
+    }
+  ],
+  "if benchmark_files.empty?\nputs \"No benchmark scripts found in benchmarks/\"": [
+    {
+      "file": "Rakefile",
+      "lines": [
+        119,
+        144
+      ]
+    }
+  ]
+}

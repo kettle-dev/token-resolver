@@ -40,5 +40,5 @@ eval_gemfile "gemfiles/modular/x_std_libs.gemfile"
 gem "irb", "~> 1.17" # ruby >= 2.7
 eval_gemfile "gemfiles/modular/benchmark/ips.gemfile"
 
-# Templating (env-switched: KETTLE_RB_DEV=true for local paths)
-eval_gemfile "gemfiles/modular/templating.gemfile"
+# Templating (env-switched: SMORG_RB_DEV=/path/to/structuredmerge/ruby/gems for local paths)
+eval_gemfile "gemfiles/modular/templating.gemfile" if ENV.fetch("K_JEM_TEMPLATING", "false").casecmp("true").zero?
