@@ -6,16 +6,16 @@
 # token-resolver will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
-# token-resolver Rakefile v1.0.0 - 2026-04-03
+# token-resolver Rakefile v7.0.0 - 2026-05-27
 # Ruby 2.3 (Safe Navigation) or higher required
 #
-# MIT License (see License.txt)
+# See LICENSE.md for license information.
 #
 # Copyright (c) 2026 Peter H. Boling (galtzo.com)
 #
 # Expected to work in any project that uses Bundler.
 #
-# Sets up tasks for appraisal, floss_funding, rspec, minitest, rubocop, reek, yard, and stone_checksums.
+# Sets up tasks for appraisal2, floss_funding, kettle-jem, kettle-dev, rspec, minitest, rubocop_gradual, reek, yard, and stone_checksums.
 #
 # rake appraisal:install                      # Install Appraisal gemfiles (initial setup...
 # rake appraisal:reset                        # Delete Appraisal lockfiles (gemfiles/*.gemfile.lock)
@@ -31,9 +31,9 @@
 # rake default                                # Default tasks aggregator
 # rake install                                # Build and install token-resolver-1.0.0.gem in...
 # rake install:local                          # Build and install token-resolver-1.0.0.gem in...
-# rake kettle:jem:install                     # Install token-resolver GitHub automation and ...
+# rake kettle:jem:install                     # Internal target used by `kettle-jem install`
 # rake kettle:jem:selftest                    # Self-test: template token-resolver against itse...
-# rake kettle:jem:template                    # Template token-resolver files into the curren...
+# rake kettle:jem:template                    # Internal target used by scoped `kettle-jem template --only`
 # rake reek                                   # Check for code smells
 # rake reek:update                            # Run reek and store the output into the RE...
 # rake release[remote]                        # Create tag v1.0.0 and build and push kett...
@@ -52,121 +52,14 @@
 # rake yard                                   # Generate YARD Documentation
 #
 
+# :nocov:
 require "bundler/gem_tasks" if !Dir[File.join(__dir__, "*.gemspec")].empty?
+# :nocov:
 
 # Define a base default task early so other files can enhance it.
 desc "Default tasks aggregator"
 task :default do
   puts "Default task complete."
-end
-
-# External gems that define tasks - add here!
-
-### TEMPLATING TASKS
-begin
-  require "kettle/jem"
-  Kettle::Jem.install_tasks
-rescue LoadError
-  desc("(stub) kettle:jem:selftest is unavailable")
-  task("kettle:jem:selftest") do
-    warn("NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
-### SPEC TASKS
-# For coverage aggregation with SimpleCov merging:
-# - Each task uses a unique K_SOUP_COV_COMMAND_NAME so SimpleCov tracks them separately
-# - K_SOUP_COV_USE_MERGING=true must be set in .envrc for results to merge
-# - K_SOUP_COV_MERGE_TIMEOUT should be set long enough for all tasks to complete
-begin
-  require "rspec/core/rake_task"
-
-  # kettle-dev creates an RSpec::Core::RakeTask.new(:spec) which has both
-  # prerequisites and actions. We will leave that, and the default test task, alone,
-  # and use *magic* here.
-  Rake::Task[:magic].clear if Rake::Task.task_defined?(:magic)
-  desc("Run specs")
-  RSpec::Core::RakeTask.new(:magic) do |t|
-    t.pattern = "./spec/**/*_spec.rb"
-  end
-
-  desc("Set SimpleCov command name for remaining specs")
-  task(:set_coverage_command_name) do
-    ENV["K_SOUP_COV_COMMAND_NAME"] = "Test Coverage"
-  end
-  Rake::Task[:magic].enhance([:set_coverage_command_name])
-
-  Rake::Task[:coverage].clear if Rake::Task.task_defined?(:coverage)
-  desc("Slap magic onto the main coverage task")
-  task(coverage: [:magic])
-rescue LoadError
-  desc("(stub) spec is unavailable")
-  task(:spec) do # rubocop:disable Rake/DuplicateTask
-    warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-
-  desc("(stub) test is unavailable")
-  task(:test) do # rubocop:disable Rake/DuplicateTask
-    warn("NOTE: rspec isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
-end
-
-### BENCHMARK TASKS
-namespace :bench do
-  desc("List available benchmark scripts")
-  task(:list) do
-    benchmark_files = Dir[File.join(__dir__, "benchmarks", "*.rb")]
-    if benchmark_files.empty?
-      puts "No benchmark scripts found in benchmarks/"
-    else
-      puts "Available benchmark scripts:"
-      benchmark_files.each do |file|
-        puts "  - #{File.basename(file, ".rb")}"
-      end
-    end
-  end
-
-  desc("Run comparison benchmark (token-resolver vs gsub vs sprintf)")
-  task(:comparison) do
-    if ENV["CI"]
-      puts "Skipping benchmarks in CI environment"
-    else
-      ruby File.join(__dir__, "benchmarks", "comparison.rb")
-    end
-  end
-
-  desc("Run all benchmark scripts (skips on CI)")
-  task(:run) do
-    if ENV["CI"]
-      puts "Skipping benchmarks in CI environment"
-    else
-      benchmark_files = Dir[File.join(__dir__, "benchmarks", "*.rb")]
-      if benchmark_files.empty?
-        puts "No benchmark scripts found in benchmarks/"
-      else
-        benchmark_files.each do |file|
-          puts "\n" + "=" * 80
-          puts "Running: #{File.basename(file)}"
-          puts "=" * 80
-          ruby file
-        end
-      end
-    end
-  end
-end
-
-desc("Run all benchmarks (alias for bench:run)")
-task(bench: ["bench:run"])
-
-### RELEASE TASKS
-# Setup stone_checksums
-begin
-  require "stone_checksums"
-rescue LoadError
-  desc("(stub) build:generate_checksums is unavailable")
-  task("build:generate_checksums") do
-    warn("NOTE: stone_checksums isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
-  end
 end
 
 # External gems that define tasks - add here!
@@ -196,4 +89,39 @@ rescue LoadError
   end
   desc("(stub) kettle:drift is unavailable")
   task("kettle:drift" => "kettle:drift:update")
+end
+
+### TEMPLATING TASKS
+# These tasks are installed for the `kettle-jem` executable. Run full templating
+# through `kettle-jem install`; use `kettle-jem template --only PATH` only for
+# scoped file updates. The executable prepares the environment and then
+# delegates here when rake orchestration is needed.
+kettle_jem_selftest_unavailable_note = nil
+begin
+  require "kettle/jem"
+  if Kettle::Jem.respond_to?(:install_tasks)
+    Kettle::Jem.install_tasks
+  else
+    kettle_jem_selftest_unavailable_note = "NOTE: kettle-jem #{Kettle::Jem::Version::VERSION} does not provide rake tasks in this environment"
+  end
+rescue LoadError
+  kettle_jem_selftest_unavailable_note = "NOTE: kettle-jem isn't installed, or is disabled for #{RUBY_VERSION} in the current environment"
+end
+
+if kettle_jem_selftest_unavailable_note
+  desc("(stub) kettle:jem:selftest is unavailable")
+  task("kettle:jem:selftest") do
+    warn(kettle_jem_selftest_unavailable_note)
+  end
+end
+
+### RELEASE TASKS
+# Setup stone_checksums
+begin
+  require "stone_checksums"
+rescue LoadError
+  desc("(stub) build:generate_checksums is unavailable")
+  task("build:generate_checksums") do
+    warn("NOTE: stone_checksums isn't installed, or is disabled for #{RUBY_VERSION} in the current environment")
+  end
 end

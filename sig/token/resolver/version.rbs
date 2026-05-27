@@ -6,4 +6,3 @@ module Token
     VERSION: String
   end
 end
-
