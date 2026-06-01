@@ -26,7 +26,7 @@ RSpec.describe Token::Resolver do
     it "resolves tokens in one step" do
       result = described_class.resolve(
         "Hello {KJ|NAME}, welcome to {KJ|PROJECT}!",
-        {"KJ|NAME" => "World", "KJ|PROJECT" => "token-resolver"},
+        {"KJ|NAME" => "World", "KJ|PROJECT" => "token-resolver"}
       )
       expect(result).to eq("Hello World, welcome to token-resolver!")
     end

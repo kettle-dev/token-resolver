@@ -66,13 +66,13 @@ module Benchmarks
           input: "Hello {KJ|NAME}, welcome to {KJ|PROJECT}!",
           tokens: {
             "KJ|NAME" => "World",
-            "KJ|PROJECT" => "token-resolver",
+            "KJ|PROJECT" => "token-resolver"
           },
           # For sprintf: convert to positional format
           sprintf_format: "Hello %s, welcome to %s!",
           sprintf_args: ["World", "token-resolver"],
           # For gsub: pattern to match tokens
-          gsub_pattern: /\{KJ\|(\w+)}/,
+          gsub_pattern: /\{KJ\|(\w+)}/
         },
         {
           name: "Moderate Complexity (7 tokens)",
@@ -86,7 +86,7 @@ module Benchmarks
             "KJ|ORG" => "kettle-rb",
             "KJ|AUTHOR" => "Peter Boling",
             "KJ|EMAIL" => "floss@galtzo.com",
-            "KJ|LICENSE" => "MIT",
+            "KJ|LICENSE" => "MIT"
           },
           sprintf_format: "Deploy %s v%s to %s for %s. Contact %s at %s. License: %s.",
           sprintf_args: [
@@ -96,9 +96,9 @@ module Benchmarks
             "kettle-rb",
             "Peter Boling",
             "floss@galtzo.com",
-            "MIT",
+            "MIT"
           ],
-          gsub_pattern: /\{KJ\|(\w+)}/,
+          gsub_pattern: /\{KJ\|(\w+)}/
         },
         {
           name: "High Complexity (20 tokens)",
@@ -107,7 +107,7 @@ module Benchmarks
           tokens: build_complex_tokens,
           sprintf_format: build_complex_sprintf_format,
           sprintf_args: build_complex_sprintf_args,
-          gsub_pattern: /\{KJ\|(\w+)}/,
+          gsub_pattern: /\{KJ\|(\w+)}/
         },
         {
           name: "Large Document with Sparse Tokens (5 tokens in 1KB text)",
@@ -118,12 +118,12 @@ module Benchmarks
             "KJ|AUTHOR" => "Peter Boling",
             "KJ|DATE" => "2026-02-21",
             "KJ|VERSION" => "1.0.0",
-            "KJ|STATUS" => "production-ready",
+            "KJ|STATUS" => "production-ready"
           },
           sprintf_format: nil, # sprintf not practical for sparse tokens
           sprintf_args: nil,
-          gsub_pattern: /\{KJ\|(\w+)}/,
-        },
+          gsub_pattern: /\{KJ\|(\w+)}/
+        }
       ]
     end
 
@@ -178,7 +178,7 @@ module Benchmarks
         "KJ|ENV" => "production",
         "KJ|REGION" => "us-east-1",
         "KJ|ZONE" => "us-east-1a",
-        "KJ|CLUSTER" => "prod-cluster-1",
+        "KJ|CLUSTER" => "prod-cluster-1"
       }
     end
 
@@ -209,7 +209,7 @@ module Benchmarks
         "production",
         "us-east-1",
         "us-east-1a",
-        "prod-cluster-1",
+        "prod-cluster-1"
       ]
     end
 
@@ -227,7 +227,7 @@ module Benchmarks
         "\n\n## Performance Considerations\n\n",
         "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. " * 5,
         "\n\n## Conclusion\n\n",
-        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. " * 3,
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum. " * 3
       ]
       paragraphs.join("")
     end
@@ -241,7 +241,7 @@ module Benchmarks
         description: scenario[:description],
         input_size: input.bytesize,
         token_count: tokens.size,
-        benchmarks: {},
+        benchmarks: {}
       }
 
       comparison = Benchmark.ips do |x|
@@ -275,7 +275,7 @@ module Benchmarks
         result[:benchmarks][entry.label] = {
           ips: entry.stats.central_tendency,
           stddev: entry.stats.error_percentage,
-          iterations: entry.iterations,
+          iterations: entry.iterations
         }
       end
 
@@ -300,7 +300,7 @@ module Benchmarks
         ruby_version: RUBY_VERSION,
         ruby_platform: RUBY_PLATFORM,
         ruby_description: RUBY_DESCRIPTION,
-        date: Time.now.strftime("%Y-%m-%d %H:%M:%S %Z"),
+        date: Time.now.strftime("%Y-%m-%d %H:%M:%S %Z")
       }
     end
 

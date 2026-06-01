@@ -93,7 +93,7 @@ RSpec.describe Token::Resolver::Grammar do
       it "treats it as text" do
         result = parser.parse("Hello {KJ|NAME world")
         tokens = result.select { |e| e.key?(:token) }
-        expect(tokens.length).to eq(0)
+        expect(tokens).to be_empty
       end
     end
 
@@ -101,7 +101,7 @@ RSpec.describe Token::Resolver::Grammar do
       it "treats it as text" do
         result = parser.parse("Hello { world")
         tokens = result.select { |e| e.key?(:token) }
-        expect(tokens.length).to eq(0)
+        expect(tokens).to be_empty
       end
     end
 
@@ -146,7 +146,7 @@ RSpec.describe Token::Resolver::Grammar do
       it "rejects tokens with too few segments" do
         result = parser.parse("{KJ|NAME}")
         tokens = result.select { |e| e.key?(:token) }
-        expect(tokens.length).to eq(0)
+        expect(tokens).to be_empty
       end
 
       it "accepts tokens with enough segments" do
@@ -168,7 +168,7 @@ RSpec.describe Token::Resolver::Grammar do
       it "rejects tokens with too many segments" do
         result = parser.parse("{KJ|A|B|C}")
         tokens = result.select { |e| e.key?(:token) }
-        expect(tokens.length).to eq(0)
+        expect(tokens).to be_empty
       end
     end
 
@@ -176,19 +176,19 @@ RSpec.describe Token::Resolver::Grammar do
       it "does not match Ruby block parameters as tokens" do
         result = parser.parse('{ |repo_name| "url" }')
         tokens = result.select { |e| e.key?(:token) }
-        expect(tokens.length).to eq(0)
+        expect(tokens).to be_empty
       end
 
       it "does not match Ruby block with single-char param" do
         result = parser.parse("cert_chain.select! { |fp| File.exist?(fp) }")
         tokens = result.select { |e| e.key?(:token) }
-        expect(tokens.length).to eq(0)
+        expect(tokens).to be_empty
       end
 
       it "does not match shell variable expansion with pipes" do
         result = parser.parse("${CLASSPATH:+:$CLASSPATH}")
         tokens = result.select { |e| e.key?(:token) }
-        expect(tokens.length).to eq(0)
+        expect(tokens).to be_empty
       end
 
       it "still matches valid tokens with word-character segments" do
@@ -217,7 +217,7 @@ RSpec.describe Token::Resolver::Grammar do
         it "does not match Ruby block parameters" do
           result = parser.parse('git_source(:codeberg) { |repo_name| "https://codeberg.org/#{repo_name}" }')
           tokens = result.select { |e| e.key?(:token) }
-          expect(tokens.length).to eq(0)
+          expect(tokens).to be_empty
         end
 
         it "matches valid multi-separator tokens" do

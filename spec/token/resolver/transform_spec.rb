@@ -5,17 +5,17 @@ RSpec.describe Token::Resolver::Transform do
 
   describe ".apply" do
     it "returns empty array for nil" do
-      expect(described_class.apply(nil, config)).to eq([])
+      expect(described_class.apply(nil, config)).to be_empty
     end
 
     it "returns empty array for empty tree" do
-      expect(described_class.apply([], config)).to eq([])
+      expect(described_class.apply([], config)).to be_empty
     end
 
     it "coalesces adjacent text entries into a single Text node" do
       tree = [
         {text: Parslet::Slice.new(Parslet::Position.new("H", 0), "H")},
-        {text: Parslet::Slice.new(Parslet::Position.new("i", 1), "i")},
+        {text: Parslet::Slice.new(Parslet::Position.new("i", 1), "i")}
       ]
       nodes = described_class.apply(tree, config)
       expect(nodes.length).to eq(1)
@@ -30,10 +30,10 @@ RSpec.describe Token::Resolver::Transform do
           token: {
             seg: [
               Parslet::Slice.new(Parslet::Position.new("KJ", 0), "KJ"),
-              Parslet::Slice.new(Parslet::Position.new("NAME", 0), "NAME"),
-            ],
-          },
-        },
+              Parslet::Slice.new(Parslet::Position.new("NAME", 0), "NAME")
+            ]
+          }
+        }
       ]
       nodes = described_class.apply(tree, config)
       expect(nodes.length).to eq(1)
@@ -43,7 +43,7 @@ RSpec.describe Token::Resolver::Transform do
 
     it "converts hash token entries with a single captured segment" do
       tree = [
-        {token: {seg: Parslet::Slice.new(Parslet::Position.new("KJ", 0), "KJ")}},
+        {token: {seg: Parslet::Slice.new(Parslet::Position.new("KJ", 0), "KJ")}}
       ]
 
       nodes = described_class.apply(tree, config)
@@ -58,9 +58,9 @@ RSpec.describe Token::Resolver::Transform do
         {
           token: [
             {seg: Parslet::Slice.new(Parslet::Position.new("KJ", 0), "KJ")},
-            Parslet::Slice.new(Parslet::Position.new("NAME", 0), "NAME"),
-          ],
-        },
+            Parslet::Slice.new(Parslet::Position.new("NAME", 0), "NAME")
+          ]
+        }
       ]
 
       nodes = described_class.apply(tree, config)
@@ -72,7 +72,7 @@ RSpec.describe Token::Resolver::Transform do
 
     it "converts raw token captures to Token nodes" do
       tree = [
-        {token: Parslet::Slice.new(Parslet::Position.new("KJ", 0), "KJ")},
+        {token: Parslet::Slice.new(Parslet::Position.new("KJ", 0), "KJ")}
       ]
 
       nodes = described_class.apply(tree, config)
@@ -84,7 +84,7 @@ RSpec.describe Token::Resolver::Transform do
 
     it "converts unknown entries to Text nodes" do
       tree = [
-        {other: "value"},
+        {other: "value"}
       ]
 
       nodes = described_class.apply(tree, config)
@@ -102,11 +102,11 @@ RSpec.describe Token::Resolver::Transform do
           token: {
             seg: [
               Parslet::Slice.new(Parslet::Position.new("X", 0), "X"),
-              Parslet::Slice.new(Parslet::Position.new("Y", 0), "Y"),
-            ],
-          },
+              Parslet::Slice.new(Parslet::Position.new("Y", 0), "Y")
+            ]
+          }
         },
-        {text: Parslet::Slice.new(Parslet::Position.new("B", 0), "B")},
+        {text: Parslet::Slice.new(Parslet::Position.new("B", 0), "B")}
       ]
       nodes = described_class.apply(tree, config)
       expect(nodes.length).to eq(3)

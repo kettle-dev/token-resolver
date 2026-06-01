@@ -21,7 +21,7 @@ RSpec.describe Token::Resolver::Document do
 
     it "returns empty array when no tokens" do
       doc = described_class.new("Hello World!", config: config)
-      expect(doc.tokens).to eq([])
+      expect(doc.tokens).to be_empty
     end
   end
 
@@ -33,7 +33,7 @@ RSpec.describe Token::Resolver::Document do
 
     it "returns empty array when no tokens" do
       doc = described_class.new("plain text", config: config)
-      expect(doc.token_keys).to eq([])
+      expect(doc.token_keys).to be_empty
     end
   end
 

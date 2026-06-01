@@ -72,7 +72,7 @@ RSpec.describe Token::Resolver::Resolve do
         doc = Token::Resolver::Document.new("{KJ|MISSING}", config: config)
         expect { resolver.resolve(doc, {}) }.to raise_error(
           Token::Resolver::UnresolvedTokenError,
-          /KJ\|MISSING/,
+          /KJ\|MISSING/
         )
       end
 
@@ -124,7 +124,7 @@ RSpec.describe Token::Resolver::Resolve do
       it "works with an array of nodes" do
         nodes = [
           Token::Resolver::Node::Text.new("Hi "),
-          Token::Resolver::Node::Token.new(["KJ", "NAME"], config),
+          Token::Resolver::Node::Token.new(["KJ", "NAME"], config)
         ]
         result = resolver.resolve(nodes, {"KJ|NAME" => "World"})
         expect(result).to eq("Hi World")
@@ -132,7 +132,7 @@ RSpec.describe Token::Resolver::Resolve do
 
       it "treats false replacement values as missing" do
         nodes = [
-          Token::Resolver::Node::Token.new(["KJ", "FLAG"], config),
+          Token::Resolver::Node::Token.new(["KJ", "FLAG"], config)
         ]
         result = described_class.new(on_missing: :keep).resolve(nodes, {"KJ|FLAG" => false})
 
