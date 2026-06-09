@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 # kettle-jem:freeze
-# To retain chunks of comments & code during token-resolver templating:
+# To retain chunks of comments & code during kettle-jem templating:
 # Wrap custom sections with freeze markers (e.g., as above and below this comment chunk).
-# token-resolver will then preserve content between those markers across template runs.
+# kettle-jem will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
 source "https://gem.coop"
@@ -20,6 +20,7 @@ gemspec
 
 # Local workspace dependency wiring for *_local.gemfile overrides
 gem "nomono", "~> 1.0", ">= 1.0.2", require: false # ruby >= 2.2
+
 # Debugging
 eval_gemfile "gemfiles/modular/debug.gemfile"
 

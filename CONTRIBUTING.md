@@ -103,7 +103,7 @@ Git hooks and commit message helpers (exe/kettle-commit-msg)
 - GIT_HOOK_FOOTER_APPEND_DEBUG: Extra debug output in the footer template (true/false)
 
 Git diff driver setup
-- Local setup writes repository `.gitattributes` entries so this checkout uses StructuredMerge semantic diffs.
+- Local setup writes repository `.gitattributes` entries and local Git `diff.smorg-*` command config so this checkout uses StructuredMerge semantic diffs.
 - Global setup registers `diff.smorg-*` commands once in the user Git config; use it when you work across several StructuredMerge-enabled repositories.
 - Include-file setup writes `.git/smorg/config` and includes it from local Git config, keeping command registrations out of the repository files.
 - Git hosting forges generally ignore external diff drivers, so pull request views may still show raw textual diffs even when local `git diff` uses semantic drivers.
@@ -115,7 +115,7 @@ K_JEM_TEMPLATING=true bundle exec kettle-jem install
 Troubleshooting Git diffs
 - Use `git diff --no-ext-diff` to compare against Git's built-in diff output.
 - Use `git diff --no-textconv` when a textconv projection obscures the raw file bytes you need to inspect.
-- If Git reports a missing `smorg-*` executable, rerun `bundle install` and the setup command above, then check `git config --get-regexp '^diff\.smorg-'`.
+- If Git reports a missing `smorg-*` executable, rerun `bundle install` and the setup command above, then check `git config --local --get-regexp '^diff\.smorg-'`.
 - To remove managed local entries, run `K_JEM_TEMPLATING=true bundle exec kettle-jem install --undo`; remove global command registrations with `git config --global --unset-all diff.smorg-ruby.command`.
 
 For a quick starting point, this repository’s `mise.toml` defines the shared defaults, and `.env.local` can override them locally. Copy `.env.local.example` to `.env.local`, use `KEY=value` lines, and either activate `mise` in your shell or run commands through `mise exec -C /path/to/project -- ...`.
@@ -198,7 +198,7 @@ Your picture could be here!
 
 Made with [contributors-img][🖐contrib-rocks].
 
-Also see GitLab Contributors: [https://gitlab.com/kettle-rb/token-resolver/-/graphs/main][🚎contributors-gl]
+Also see GitLab Contributors: [https://gitlab.com/kettle-dev/token-resolver/-/graphs/main][🚎contributors-gl]
 
 ## For Maintainers
 
@@ -249,15 +249,15 @@ NOTE: To build without signing the gem set `SKIP_GEM_SIGNING` to any value in th
 14. Run `bundle exec rake release` which will create a git tag for the version,
     push git commits and tags, and push the `.gem` file to the gem host configured in the gemspec.
 
-[📜src-gl]: https://gitlab.com/kettle-rb/token-resolver
-[📜src-cb]: https://codeberg.org/kettle-rb/token-resolver
-[📜src-gh]: https://github.com/kettle-rb/token-resolver
-[🧪build]: https://github.com/kettle-rb/token-resolver/actions
-[🤝conduct]: https://github.com/kettle-rb/token-resolver/blob/main/CODE_OF_CONDUCT.md
+[📜src-gl]: https://gitlab.com/kettle-dev/token-resolver
+[📜src-cb]: https://codeberg.org/kettle-dev/token-resolver
+[📜src-gh]: https://github.com/kettle-dev/token-resolver
+[🧪build]: https://github.com/kettle-dev/token-resolver/actions
+[🤝conduct]: https://github.com/kettle-dev/token-resolver/blob/main/CODE_OF_CONDUCT.md
 [🖐contrib-rocks]: https://contrib.rocks
-[🖐contributors]: https://github.com/kettle-rb/token-resolver/graphs/contributors
-[🚎contributors-gl]: https://gitlab.com/kettle-rb/token-resolver/-/graphs/main
-[🖐contributors-img]: https://contrib.rocks/image?repo=kettle-rb/token-resolver
+[🖐contributors]: https://github.com/kettle-dev/token-resolver/graphs/contributors
+[🚎contributors-gl]: https://gitlab.com/kettle-dev/token-resolver/-/graphs/main
+[🖐contributors-img]: https://contrib.rocks/image?repo=kettle-dev/token-resolver
 [💎gem-coop]: https://gem.coop
 [🔒️rubygems-security-guide]: https://guides.rubygems.org/security/#building-gems
 [🔒️rubygems-checksums-pr]: https://github.com/rubygems/rubygems/pull/6022
