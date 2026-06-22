@@ -4,8 +4,6 @@
 # token-resolver will then preserve content between those markers across template runs.
 # kettle-jem:unfreeze
 
-require "kettle/soup/cover/config"
-
 # Minimum coverage thresholds are set by kettle-soup-cover.
 # They are controlled by ENV variables loaded by `mise` from `mise.toml`
 # (with optional machine-local overrides in `.env.local`).
@@ -13,9 +11,4 @@ require "kettle/soup/cover/config"
 #   and in 2 places in .github/workflows/coverage.yml.
 SimpleCov.configure do
   cover "lib/**/*.rb", "lib/**/*.rake", "exe/*.rb"
-end
-SimpleCov.start do
-  track_files "lib/**/*.rb"
-  track_files "lib/**/*.rake"
-  track_files "exe/*.rb"
 end
