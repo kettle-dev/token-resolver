@@ -20,11 +20,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- Added support for JRuby 10.1 and TruffleRuby 34.0.
-
 ### Changed
-
-- Retemplated project metadata and CI/development automation with `kettle-jem` v7.0.0.
 
 ### Deprecated
 
@@ -32,9 +28,26 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Corrected OpenCollective funding metadata to use the `kettle-dev` collective.
-
 ### Security
+
+## [2.0.3] - 2026-06-21
+
+- TAG: [v2.0.3][2.0.3t]
+- COVERAGE: 99.62% -- 265/266 lines in 11 files
+- BRANCH COVERAGE: 98.46% -- 64/65 branches in 11 files
+- 93.55% documented
+
+### Added
+
+- Added support for JRuby 10.1 and TruffleRuby 34.0.
+
+### Changed
+
+- Retemplated project metadata and CI/development automation with `kettle-jem` v7.0.0.
+
+### Fixed
+
+- Corrected OpenCollective funding metadata to use the `kettle-dev` collective.
 
 ## [2.0.2] - 2026-06-10
 
@@ -186,7 +199,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.3...HEAD
+[2.0.3]: https://github.com/kettle-dev/token-resolver/compare/v2.0.2...v2.0.3
+[2.0.3t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.3
 [2.0.2]: https://github.com/kettle-dev/token-resolver/compare/v2.0.1...v2.0.2
 [2.0.2t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.2
 [2.0.1]: https://github.com/kettle-dev/token-resolver/compare/v2.0.0...v2.0.1

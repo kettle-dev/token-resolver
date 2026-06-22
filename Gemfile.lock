@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    token-resolver (2.0.2)
+    token-resolver (2.0.3)
       parslet (~> 2.0)
       version_gem (~> 1.1, >= 1.1.12)
 
@@ -528,7 +528,7 @@ CHECKSUMS
   thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   timecop (0.9.11) sha256=41284dc6e5041f2184f781ace766f942108c842f8d8c1386a26e6343decc7542
   timecop-rspec (1.0.3) sha256=005f14841bb606dcaefb060e321b5388e2e59537742bee8b3a9a9a40e598fab9
-  token-resolver (2.0.2)
+  token-resolver (2.0.3)
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   turbo_tests2 (3.1.4) sha256=c7e207e57d4352202c5496a72d850840b9c02120ed8355765abf105a568e5f1c
   unicode-display_width (3.2.0) sha256=0cdd96b5681a5949cdbc2c55e7b420facae74c4aaf9a9815eee1087cb1853c42
