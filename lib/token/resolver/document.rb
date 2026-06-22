@@ -54,7 +54,7 @@ module Token
       #
       # @return [String]
       def to_s
-        @nodes.map(&:to_s).join
+        @nodes.join
       end
 
       # Whether the input contains no tokens.

@@ -215,7 +215,7 @@ RSpec.describe Token::Resolver::Grammar do
         let(:config) { Token::Resolver::Config.new(separators: ["|", ":"]) }
 
         it "does not match Ruby block parameters" do
-          result = parser.parse('git_source(:codeberg) { |repo_name| "https://codeberg.org/#{repo_name}" }')
+          result = parser.parse("git_source(:codeberg) { |repo_name| \"https://codeberg.org/\#{repo_name}\" }")
           tokens = result.select { |e| e.key?(:token) }
           expect(tokens).to be_empty
         end
