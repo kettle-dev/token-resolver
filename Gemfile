@@ -22,14 +22,8 @@ gemspec
 nomono_requirements = ["~> 1.0", ">= 1.0.8"]
 gem "nomono", *nomono_requirements, require: false # ruby >= 2.2
 
-# Use the released TSLP gem by default; templating can override it via VENDORED_GEMS.
-vendored_gems = ENV.fetch("VENDORED_GEMS", "").split(",").map(&:strip)
-tslp_declared_by_templating =
-  ENV.fetch("K_JEM_TEMPLATING", "false").casecmp("true").zero? &&
-    vendored_gems.include?("tree_sitter_language_pack")
-unless tslp_declared_by_templating
-  gem "tree_sitter_language_pack", ">= 1.13.2", "< 2.0"
-end
+# Use released TSLP with the Ruby ABI platform-gem fix.
+gem "tree_sitter_language_pack", "~> 1.13", ">= 1.13.3"
 
 # Templating (env-switched: STRUCTUREDMERGE_DEV=/path/to/structuredmerge/ruby/gems for local paths)
 eval_gemfile "gemfiles/modular/templating.gemfile" if ENV.fetch("K_JEM_TEMPLATING", "false").casecmp("true").zero?
