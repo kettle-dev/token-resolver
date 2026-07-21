@@ -22,6 +22,23 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.5] - 2026-07-21
+
+- TAG: [v2.0.5][2.0.5t]
+- COVERAGE: 99.62% -- 265/266 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 93.55% documented
+
+### Changed
+
 - kettle-jem-template-20260716-001 - Shim gemspec manifests now include
   `LICENSE.md` instead of nonexistent `LICENSE.txt`.
 - kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer
@@ -37,14 +54,6 @@ Please file a bug if you notice a violation of semantic versioning.
   omit JRuby and TruffleRuby jobs when project config declares MRI-only engines.
 - kettle-jem-template-20260720-005 - Generated README Support & Community rows
   now include a RubyForum help badge.
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [2.0.4] - 2026-07-01
 
@@ -226,7 +235,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.4...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.5...HEAD
+[2.0.5]: https://github.com/kettle-dev/token-resolver/compare/v2.0.4...v2.0.5
+[2.0.5t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.5
 [2.0.4]: https://github.com/kettle-dev/token-resolver/compare/v2.0.3...v2.0.4
 [2.0.4t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.4
 [2.0.3]: https://github.com/kettle-dev/token-resolver/compare/v2.0.2...v2.0.3
