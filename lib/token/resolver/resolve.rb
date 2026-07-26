@@ -23,7 +23,6 @@ module Token
     #   resolver = Resolve.new(on_missing: :remove)
     #   resolver.resolve(doc, {})
     #   # => "Hello !"
-    #
     class Resolve
       VALID_ON_MISSING = %i[raise keep remove].freeze
 

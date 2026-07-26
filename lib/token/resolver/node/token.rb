@@ -23,7 +23,6 @@ module Token
       #   token = Token::Resolver::Node::Token.new(["KJ", "SECTION", "NAME"], config)
       #   token.key       # => "KJ|SECTION:NAME"
       #   token.to_s      # => "{KJ|SECTION:NAME}"
-      #
       class Token
         # @return [Array<String>] The token segments
         attr_reader :segments

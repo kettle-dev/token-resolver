@@ -27,7 +27,6 @@ module Token
     #     separators: ["|", ":"],
     #   )
     #   # First boundary uses "|", second uses ":", rest repeat ":"
-    #
     class Config
       # @return [String] Opening delimiter for tokens
       attr_reader :pre

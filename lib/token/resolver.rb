@@ -23,7 +23,6 @@ module Token
   #     {"KJ|NAME" => "World", "KJ|PROJECT" => "token-resolver"}
   #   )
   #   # => "Hello World, welcome to token-resolver!"
-  #
   module Resolver
     # Base error class for all token-resolver operations.
     # @api public

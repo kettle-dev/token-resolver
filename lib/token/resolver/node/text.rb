@@ -12,7 +12,6 @@ module Token
       #   text = Token::Resolver::Node::Text.new("Hello ")
       #   text.to_s     # => "Hello "
       #   text.content  # => "Hello "
-      #
       class Text
         # @return [String] The text content
         attr_reader :content

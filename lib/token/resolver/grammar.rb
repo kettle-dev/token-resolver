@@ -17,7 +17,6 @@ module Token
     #
     # @note The raw parslet tree contains one :text entry per character.
     #   Use Transform to coalesce these into proper Text nodes.
-    #
     class Grammar
       # Cache of built parser classes, keyed by Config.
       # Config is frozen and implements #hash/#eql?, so this is safe.

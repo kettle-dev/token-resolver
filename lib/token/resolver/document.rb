@@ -18,7 +18,6 @@ module Token
     # @example Fast-path for text without tokens
     #   doc = Token::Resolver::Document.new("No tokens here")
     #   doc.text_only?  # => true
-    #
     class Document
       # @return [Array<Node::Text, Node::Token>] Parsed nodes
       attr_reader :nodes

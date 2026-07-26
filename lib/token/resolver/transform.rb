@@ -15,7 +15,6 @@ module Token
     #   tree = Grammar.build(config).new.parse("Hi {KJ|X}!")
     #   nodes = Transform.apply(tree, config)
     #   # => [Node::Text("Hi "), Node::Token(["KJ", "X"]), Node::Text("!")]
-    #
     class Transform
       class << self
         # Transform a parslet tree into an array of Text and Token nodes.
