@@ -24,6 +24,9 @@ Please file a bug if you notice a violation of semantic versioning.
   configuration and documentation dependencies so documentation issues fail
   before generated docs are refreshed.
 
+- kettle-jem-template-20260727-001 - Spec harness documentation now lists the
+  RSpec helpers provided by `kettle-test`.
+
 ### Changed
 
 - kettle-jem-template-20260725-001 - Release pull request branches beginning
@@ -31,6 +34,10 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260725-002 - Version specs now use `anonymous_loader` to
   cover `version.rb` without redefining constants, or are removed when version
   specs are not managed for the project.
+
+- kettle-jem-template-20260728-001 - Generated Ruby workflows now use clearer
+  setup-ruby-flash planning and can prepare appraisal-only jobs without
+  installing the main Gemfile bundle.
 
 ### Deprecated
 
@@ -40,6 +47,16 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - kettle-jem-template-20260726-002 - Generated version files now document their
   version namespace and constants, reducing warning-only YARD lint output.
+
+- kettle-jem-template-20260726-003 - Coverage upload steps now treat Coveralls,
+  QLTY, and Codecov as optional, so provider outages do not fail CI when local
+  coverage thresholds still pass.
+- kettle-jem-template-20260728-002 - Generated RuboCop configs now ignore the
+  same `gemfiles/vendor/bundle` tree as `.gitignore`, so vendored dependency
+  installs are not reported as project lint debt.
+- kettle-jem-template-20260728-003 - Generated dep-heads workflows now run
+  TruffleRuby jobs with current RubyGems and Bundler, avoiding setup failures
+  before the test suite starts.
 
 ### Security
 
