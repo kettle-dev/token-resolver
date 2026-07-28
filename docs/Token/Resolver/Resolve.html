@@ -328,17 +328,17 @@ to the <code>on_missing</code> policy.</p>
       <pre class="lines">
 
 
+34
 35
 36
 37
 38
 39
 40
-41
-42</pre>
+41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/token/resolver/resolve.rb', line 35</span>
+      <pre class="code"><span class="info file"># File 'lib/token/resolver/resolve.rb', line 34</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='label'>on_missing:</span> <span class='symbol'>:raise</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="#VALID_ON_MISSING-constant" title="Token::Resolver::Resolve::VALID_ON_MISSING (constant)">VALID_ON_MISSING</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_on_missing'>on_missing</span><span class='rparen'>)</span>
@@ -402,12 +402,12 @@ to the <code>on_missing</code> policy.</p>
       <pre class="lines">
 
 
+30
 31
-32
-33</pre>
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/token/resolver/resolve.rb', line 31</span>
+      <pre class="code"><span class="info file"># File 'lib/token/resolver/resolve.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_on_missing'>on_missing</span>
   <span class='ivar'>@on_missing</span>
@@ -532,6 +532,7 @@ to the <code>on_missing</code> policy.</p>
       <pre class="lines">
 
 
+53
 54
 55
 56
@@ -557,11 +558,10 @@ to the <code>on_missing</code> policy.</p>
 76
 77
 78
-79
-80</pre>
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/token/resolver/resolve.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/token/resolver/resolve.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resolve'>resolve</span><span class='lparen'>(</span><span class='id identifier rubyid_document_or_nodes'>document_or_nodes</span><span class='comma'>,</span> <span class='id identifier rubyid_replacements'>replacements</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_nodes'>nodes</span><span class='comma'>,</span> <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_document_or_nodes'>document_or_nodes</span>

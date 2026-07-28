@@ -148,7 +148,7 @@ detected in any file format and resolved against a replacement map.</p>
         <dt id="VERSION-constant" class="">VERSION =
           <div class="docstring">
   <div class="discussion">
-    <p>Traditional Constant Location</p>
+    <p>Current gem version exposed at the traditional constant location.</p>
 
 
   </div>
@@ -320,12 +320,12 @@ detected in any file format and resolved against a replacement map.</p>
       <pre class="lines">
 
 
+63
 64
-65
-66</pre>
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/token/resolver.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/token/resolver.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='label'>config:</span> <span class='const'><span class='object_link'><a href="Resolver/Config.html" title="Token::Resolver::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="Resolver/Config.html#default-class_method" title="Token::Resolver::Config.default (method)">default</a></span></span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="Resolver/Document.html" title="Token::Resolver::Document (class)">Document</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Resolver/Document.html#initialize-instance_method" title="Token::Resolver::Document#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='label'>config:</span> <span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
@@ -454,14 +454,14 @@ detected in any file format and resolved against a replacement map.</p>
       <pre class="lines">
 
 
+78
 79
 80
 81
-82
-83</pre>
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/token/resolver.rb', line 79</span>
+      <pre class="code"><span class="info file"># File 'lib/token/resolver.rb', line 78</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resolve'>resolve</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='id identifier rubyid_replacements'>replacements</span><span class='comma'>,</span> <span class='label'>config:</span> <span class='const'><span class='object_link'><a href="Resolver/Config.html" title="Token::Resolver::Config (class)">Config</a></span></span><span class='period'>.</span><span class='id identifier rubyid_default'><span class='object_link'><a href="Resolver/Config.html#default-class_method" title="Token::Resolver::Config.default (method)">default</a></span></span><span class='comma'>,</span> <span class='label'>on_missing:</span> <span class='symbol'>:raise</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_doc'>doc</span> <span class='op'>=</span> <span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_input'>input</span><span class='comma'>,</span> <span class='label'>config:</span> <span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>

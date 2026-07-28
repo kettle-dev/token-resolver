@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.6] - 2026-07-28
+
+- TAG: [v2.0.6][2.0.6t]
+- COVERAGE: 99.62% -- 265/266 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 96.77% documented
+
+### Added
+
 - kettle-jem-template-20260726-001 - Projects now include YARD lint
   configuration and documentation dependencies so documentation issues fail
   before generated docs are refreshed.
@@ -39,10 +58,6 @@ Please file a bug if you notice a violation of semantic versioning.
   setup-ruby-flash planning and can prepare appraisal-only jobs without
   installing the main Gemfile bundle.
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - kettle-jem-template-20260726-002 - Generated version files now document their
@@ -57,8 +72,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260728-003 - Generated dep-heads workflows now run
   TruffleRuby jobs with current RubyGems and Bundler, avoiding setup failures
   before the test suite starts.
-
-### Security
 
 ## [2.0.5] - 2026-07-21
 
@@ -265,7 +278,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.5...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.6...HEAD
+[2.0.6]: https://github.com/kettle-dev/token-resolver/compare/v2.0.5...v2.0.6
+[2.0.6t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.6
 [2.0.5]: https://github.com/kettle-dev/token-resolver/compare/v2.0.4...v2.0.5
 [2.0.5t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.5
 [2.0.4]: https://github.com/kettle-dev/token-resolver/compare/v2.0.3...v2.0.4
