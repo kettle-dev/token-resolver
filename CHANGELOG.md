@@ -20,15 +20,28 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- kettle-jem-template-20260729-005 - Gemspec metadata now publishes this
-  project's RubyForum tag as `mailing_list_uri`, and support docs link to the
-  tagged RubyForum community alongside Discord.
-
 ### Changed
 
 ### Deprecated
 
 ### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.7] - 2026-07-31
+
+- TAG: [v2.0.7][2.0.7t]
+- COVERAGE: 99.62% -- 265/266 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 96.77% documented
+
+### Added
+
+- kettle-jem-template-20260729-005 - Gemspec metadata now publishes this
+  project's RubyForum tag as `mailing_list_uri`, and support docs link to the
+  tagged RubyForum community alongside Discord.
 
 ### Fixed
 
@@ -51,8 +64,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs
   relative to the gemspec directory, so release package contents stay correct
   even when the gemspec is loaded from another working directory.
-
-### Security
 
 ## [2.0.6] - 2026-07-28
 
@@ -302,7 +313,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.6...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.7...HEAD
+[2.0.7]: https://github.com/kettle-dev/token-resolver/compare/v2.0.6...v2.0.7
+[2.0.7t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.7
 [2.0.6]: https://github.com/kettle-dev/token-resolver/compare/v2.0.5...v2.0.6
 [2.0.6t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.6
 [2.0.5]: https://github.com/kettle-dev/token-resolver/compare/v2.0.4...v2.0.5
