@@ -2,9 +2,9 @@
 
 # External gems
 require "version_gem"
+require_relative "resolver/version"
 
 # This gem - only version can be required (never autoloaded)
-require_relative "resolver/version"
 
 module Token
   # Token::Resolver provides configurable PEG-based (parslet) parsing and resolution
