@@ -22,12 +22,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- kettle-jem-template-20260801-001 - Generated README gem dashboard links now
-  use ClickGems instead of BestGems.
-
 ### Deprecated
 
 ### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.8] - 2026-08-01
+
+- TAG: [v2.0.8][2.0.8t]
+- COVERAGE: 99.62% -- 265/266 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 96.77% documented
+
+### Changed
+
+- kettle-jem-template-20260801-001 - Generated README gem dashboard links now
+  use ClickGems instead of BestGems.
 
 ### Fixed
 
@@ -40,8 +53,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260801-004 - Generated organization README logos now
   use GitHub's stable organization avatar endpoint instead of assuming a
   matching Galtzo-hosted asset exists.
-
-### Security
 
 ## [2.0.7] - 2026-07-31
 
@@ -326,7 +337,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.7...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.8...HEAD
+[2.0.8]: https://github.com/kettle-dev/token-resolver/compare/v2.0.7...v2.0.8
+[2.0.8t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.8
 [2.0.7]: https://github.com/kettle-dev/token-resolver/compare/v2.0.6...v2.0.7
 [2.0.7t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.7
 [2.0.6]: https://github.com/kettle-dev/token-resolver/compare/v2.0.5...v2.0.6
