@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 # External gems
-require "version_gem"
 require_relative "resolver/version"
 
 # This gem - only version can be required (never autoloaded)
@@ -82,8 +81,4 @@ module Token
       end
     end
   end
-end
-
-Token::Resolver::Version.class_eval do
-  extend VersionGem::Basic
 end

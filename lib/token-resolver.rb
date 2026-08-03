@@ -2,3 +2,9 @@
 #   See: https://github.com/fxn/zeitwerk#for_gem_extension
 # Hook for other libraries to load this library (e.g. via bundler)
 require "token/resolver"
+require "version_gem"
+require_relative "token/resolver/version"
+
+Token::Resolver::Version.class_eval do
+  extend VersionGem::Basic
+end
