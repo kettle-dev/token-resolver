@@ -28,6 +28,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Refresh kettle-family with nomono in the templating workflow.
+
 ### Security
 
 ## [2.0.9] - 2026-08-03
