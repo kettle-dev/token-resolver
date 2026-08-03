@@ -28,10 +28,19 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [2.0.9] - 2026-08-03
+
+- TAG: [v2.0.9][2.0.9t]
+- COVERAGE: 99.62% -- 265/266 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 98.39% documented
+
+### Fixed
+
 - kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
   preserving comments and trailing commas during template updates.
-
-### Security
 
 ## [2.0.8] - 2026-08-01
 
@@ -320,7 +329,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.8...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.9...HEAD
+[2.0.9]: https://github.com/kettle-dev/token-resolver/compare/v2.0.8...v2.0.9
+[2.0.9t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.9
 [2.0.8]: https://github.com/kettle-dev/token-resolver/compare/v2.0.7...v2.0.8
 [2.0.8t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.8
 [2.0.7]: https://github.com/kettle-dev/token-resolver/compare/v2.0.6...v2.0.7
