@@ -28,8 +28,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Refresh kettle-family with nomono in the templating workflow.
-
 ### Security
 
 ## [2.0.9] - 2026-08-03
@@ -43,6 +41,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
   preserving comments and trailing commas during template updates.
+
+- Refresh kettle-family with nomono in the templating workflow.
 
 ## [2.0.8] - 2026-08-01
 
