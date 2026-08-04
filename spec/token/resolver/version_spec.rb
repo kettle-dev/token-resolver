@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "anonymous_loader"
-require "token/resolver"
+require "token-resolver"
 RSpec.describe Token::Resolver::Version do
   it_behaves_like "a Version module", described_class
 
