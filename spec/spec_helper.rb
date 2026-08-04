@@ -26,7 +26,7 @@ require "kettle/test/rspec"
 require_relative "config/debug"
 
 # This library
-require "token/resolver"
+require "token-resolver"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
