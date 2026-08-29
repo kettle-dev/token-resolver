@@ -22,6 +22,23 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.10] - 2026-08-28
+
+- TAG: [v2.0.10][2.0.10t]
+- COVERAGE: 100.00% -- 267/267 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 98.39% documented
+
+### Changed
+
 - [kc] kettle-jem/prepare: updated 12 project files:
   - configuration (1)
   - dependencies (11)
@@ -32,14 +49,6 @@ Please file a bug if you notice a violation of semantic versioning.
   - dependencies (1)
   - documentation (2)
   - other (3)
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [2.0.9] - 2026-08-03
 
@@ -342,7 +351,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.9...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.10...HEAD
+[2.0.10]: https://github.com/kettle-dev/token-resolver/compare/v2.0.9...v2.0.10
+[2.0.10t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.10
 [2.0.9]: https://github.com/kettle-dev/token-resolver/compare/v2.0.8...v2.0.9
 [2.0.9t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.9
 [2.0.8]: https://github.com/kettle-dev/token-resolver/compare/v2.0.7...v2.0.8
