@@ -22,14 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- [kc] kettle-jem/prepare: updated 10 project files:
-  - dependencies (10)
-
-- [kc] kettle-jem/template: updated 4 project files:
-  - code and tests (1)
-  - dependencies (2)
-  - other (1)
-
 ### Deprecated
 
 ### Removed
@@ -37,6 +29,23 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [2.0.11] - 2026-09-14
+
+- TAG: [v2.0.11][2.0.11t]
+- COVERAGE: 100.00% -- 267/267 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 98.39% documented
+
+### Changed
+
+- [kc] kettle-jem/prepare: updated 10 project files:
+  - dependencies (10)
+
+- [kc] kettle-jem/template: updated 4 project files:
+  - code and tests (1)
+  - dependencies (2)
+  - other (1)
 
 ## [2.0.10] - 2026-08-28
 
@@ -359,7 +368,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.10...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.11...HEAD
+[2.0.11]: https://github.com/kettle-dev/token-resolver/compare/v2.0.10...v2.0.11
+[2.0.11t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.11
 [2.0.10]: https://github.com/kettle-dev/token-resolver/compare/v2.0.9...v2.0.10
 [2.0.10t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.10
 [2.0.9]: https://github.com/kettle-dev/token-resolver/compare/v2.0.8...v2.0.9
