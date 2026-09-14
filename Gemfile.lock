@@ -523,16 +523,16 @@ GEM
       parslet (~> 2.0)
       tree_sitter_language_pack (>= 1.16.2, < 2.0)
       version_gem (~> 1.1, >= 1.1.15)
-    tree_sitter_language_pack (1.19.1)
+    tree_sitter_language_pack (1.20.0)
       rb_sys (>= 0.9.130, < 0.10)
       sorbet-runtime (~> 0.5)
-    tree_sitter_language_pack (1.19.1-aarch64-linux)
+    tree_sitter_language_pack (1.20.0-aarch64-linux)
       sorbet-runtime (~> 0.5)
-    tree_sitter_language_pack (1.19.1-arm64-darwin)
+    tree_sitter_language_pack (1.20.0-arm64-darwin)
       sorbet-runtime (~> 0.5)
-    tree_sitter_language_pack (1.19.1-x86_64-darwin)
+    tree_sitter_language_pack (1.20.0-x86_64-darwin)
       sorbet-runtime (~> 0.5)
-    tree_sitter_language_pack (1.19.1-x86_64-linux)
+    tree_sitter_language_pack (1.20.0-x86_64-linux)
       sorbet-runtime (~> 0.5)
     tsort (0.2.0)
     tty-cursor (0.7.1)
@@ -812,11 +812,11 @@ CHECKSUMS
   toml-merge (7.1.9) sha256=a085b6d3e0f5ceed49ad2711f643c640a65cfbedca590dafdef7ce6e33fec71a
   toml-rb (4.2.1) sha256=e6c40e27905e86a7d38cc252eb4bc12d72c61576c826a358390c30f5de0b9dbb
   tree_haver (7.1.9) sha256=d7420e0f8f21368e1362da63bfe105897e7e56bdf741ba292adef7a6c3ea0a75
-  tree_sitter_language_pack (1.19.1) sha256=12623c568e593e490f5bd027a4a9ab1d10aa49f283ff6d9e361cafbde8977e43
-  tree_sitter_language_pack (1.19.1-aarch64-linux) sha256=83cf05faaf78d4df8817217afb6b7eda479c1643f20bb2346e948101b7f632ec
-  tree_sitter_language_pack (1.19.1-arm64-darwin) sha256=b3f42f5ae54b37893eb52ca8e1afa3bf7027d0a50af36c5b2a842466a372b6f4
-  tree_sitter_language_pack (1.19.1-x86_64-darwin) sha256=a84070e2b71f9edf8c3b07db48b5fedf96b6556abf133f412d1b7f0ef763d75f
-  tree_sitter_language_pack (1.19.1-x86_64-linux) sha256=a9bd3516abc22d6ac088e67a74b97276d1da3da2ccae4c1359f2aed968ad27d6
+  tree_sitter_language_pack (1.20.0) sha256=2ab298478a2390f0fba2f05e32325bb5b7c2f5f9674019d209de582446329d7d
+  tree_sitter_language_pack (1.20.0-aarch64-linux) sha256=8b43f4c3d18705d4211a5dc0d9281f5e68616c8dd6b323df411b9ee026894f6f
+  tree_sitter_language_pack (1.20.0-arm64-darwin) sha256=b5e6899bedaa750f030a12bfd5db96fe9ed6a0617eee37119c0ffafd49d5baae
+  tree_sitter_language_pack (1.20.0-x86_64-darwin) sha256=8c33f147b46b768a8c333fe8ee3924279feed0c39819232cd92a73f8d34826d6
+  tree_sitter_language_pack (1.20.0-x86_64-linux) sha256=ce5e910a1443afbc770eb6cd18d33b08327fed1ef721f6c9a15e0dfccf7327a4
   tsort (0.2.0) sha256=9650a793f6859a43b6641671278f79cfead60ac714148aabe4e3f0060480089f
   tty-cursor (0.7.1) sha256=79534185e6a777888d88628b14b6a1fdf5154a603f285f80b1753e1908e0bf48
   tty-progressbar (0.18.3) sha256=6cbb4260e55e74a9180d502143eb6a467d2c8e51bf5f3c9509fb5cacc3d4a5f6
