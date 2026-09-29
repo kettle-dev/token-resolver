@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.12] - 2026-09-28
+
+- TAG: [v2.0.12][2.0.12t]
+- COVERAGE: 100.00% -- 267/267 lines in 11 files
+- BRANCH COVERAGE: 100.00% -- 64/64 branches in 11 files
+- 98.39% documented
+
+### Added
+
 - kettle-jem-template-20260913-001 - Templating now also surfaces a review
   entry in `dependency_conflicts.resolve` when a direct development
   dependency doesn't support one or more of this project's declared
@@ -37,14 +56,6 @@ Please file a bug if you notice a violation of semantic versioning.
   - dependencies (1)
   - other (1)
   - workflows (18)
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [2.0.11] - 2026-09-14
 
@@ -384,7 +395,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.11...HEAD
+[Unreleased]: https://github.com/kettle-dev/token-resolver/compare/v2.0.12...HEAD
+[2.0.12]: https://github.com/kettle-dev/token-resolver/compare/v2.0.11...v2.0.12
+[2.0.12t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.12
 [2.0.11]: https://github.com/kettle-dev/token-resolver/compare/v2.0.10...v2.0.11
 [2.0.11t]: https://github.com/kettle-dev/token-resolver/releases/tag/v2.0.11
 [2.0.10]: https://github.com/kettle-dev/token-resolver/compare/v2.0.9...v2.0.10
