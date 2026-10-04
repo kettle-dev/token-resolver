@@ -1,4 +1,13 @@
 {
+  "- [kc] kettle-jem/prepare: updated 12 project files:\n- dependencies (12)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        25,
+        61
+      ]
+    }
+  ],
   "exec_cmd: \"kettle-test\"\nrubygems: latest": [
     {
       "file": ".github/workflows/current.yml",
