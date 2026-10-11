@@ -215,8 +215,8 @@ GEM
     kettle-ndjson (0.1.19)
       version_gem (~> 1.1, >= 1.1.15)
     kettle-rb (0.1.17)
-    kettle-soup-cover (3.0.11)
-      kettle-wash (~> 0.1, >= 0.1.9)
+    kettle-soup-cover (3.0.12)
+      kettle-wash (~> 0.1, >= 0.1.10)
       simplecov (>= 1.0)
       simplecov-cobertura (>= 4.0)
       simplecov-console (~> 0.9, >= 0.9.5)
@@ -235,7 +235,7 @@ GEM
       timecop-rspec (~> 1.0, >= 1.0.3)
       turbo_tests2 (~> 3.1, >= 3.1.12)
       version_gem (~> 1.1, >= 1.1.15)
-    kettle-wash (0.1.9)
+    kettle-wash (0.1.10)
       version_gem (~> 1.1, >= 1.1.15)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
@@ -694,9 +694,9 @@ CHECKSUMS
   kettle-jem (7.1.28) sha256=6bd38a850bc3a73786cd26f3c3489f37ab6040832143df8fbd5e41ad73085d14
   kettle-ndjson (0.1.19) sha256=ec9bf7c6559dc527331589f324a91c15e85345c820c1aeb02bd585dae86f08b1
   kettle-rb (0.1.17) sha256=70e23641ad50453c95b1d7215281754bb3bf55114dc535ce94d3a198879c7b7f
-  kettle-soup-cover (3.0.11) sha256=38b4d0792dde04e1f19a222a5a6e9861b794bdfb1d0c33474e5ca7ff879342a6
+  kettle-soup-cover (3.0.12) sha256=bce9a259d67a0d12a9d61d1195d0ee4137aa0c1887935e0982d98ac7ab3f4949
   kettle-test (2.0.24) sha256=90de5fff9d8c92ebade0bece7b1b5602e6325873c1a98ae4f5880c6aed95556c
-  kettle-wash (0.1.9) sha256=e0ec1c8c1f0574b298dcf4f72a5d1b70b1435ef75635d9192c5ed541f9f60335
+  kettle-wash (0.1.10) sha256=f0ad247a2b90bb0e7f7d1b45e47b266d4c20af611954aad49756b1b949015ffd
   kramdown (2.5.2) sha256=1ba542204c66b6f9111ff00dcc26075b95b220b07f2905d8261740c82f7f02fa
   kramdown-merge (7.1.9) sha256=ce3ab38361aaf43dfd60b5df56a3b799ca69be18cd815495dcce265b8c8f62a3
   kramdown-parser-gfm (1.1.0) sha256=fb39745516427d2988543bf01fc4cf0ab1149476382393e0e9c48592f6581729
