@@ -3,8 +3,17 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        52,
-        80
+        71,
+        99
+      ]
+    }
+  ],
+  "- documentation (1)\n- other (1)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        31,
+        58
       ]
     }
   ],
