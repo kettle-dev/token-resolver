@@ -37,8 +37,8 @@ PATH
     kettle-dev (3.1.25)
       emoji_regex (>= 15.0)
       kettle-gha-pins (~> 0.3, >= 0.3.18)
-      kettle-ndjson (~> 0.1, >= 0.1.20)
-      kettle-rb (~> 0.1, >= 0.1.19)
+      kettle-ndjson (~> 0.1, >= 0.1.22)
+      kettle-rb (~> 0.1, >= 0.1.20)
       kettle-test (~> 2.0, >= 2.0.27)
       ruby-progressbar (~> 1.13)
       tty-progressbar (~> 0.18)
@@ -75,7 +75,7 @@ PATH
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-rb
   specs:
-    kettle-rb (0.1.19)
+    kettle-rb (0.1.20)
 
 PATH
   remote: /var/home/pboling/src/my/kettle-dev/kettle-soup-cover
@@ -495,7 +495,7 @@ GEM
       ruby-progressbar (~> 1.13)
       tty-progressbar (~> 0.18)
       version_gem (~> 1.1, >= 1.1.16)
-    kettle-ndjson (0.1.21)
+    kettle-ndjson (0.1.22)
       version_gem (~> 1.1, >= 1.1.16)
     kettle-wash (0.1.11)
       version_gem (~> 1.1, >= 1.1.15)
@@ -942,8 +942,8 @@ CHECKSUMS
   kettle-family (1.3.34)
   kettle-gha-pins (0.3.19) sha256=ac43784d685aaee019056d666d0c7a8d6d2d9d0b6cd9823c3897cfee27627035
   kettle-jem (7.1.41)
-  kettle-ndjson (0.1.21)
-  kettle-rb (0.1.19)
+  kettle-ndjson (0.1.22)
+  kettle-rb (0.1.20)
   kettle-soup-cover (3.0.14)
   kettle-test (2.0.28)
   kettle-wash (0.1.11) sha256=e1510eb1b7cc2e9d0b489c98cc43a58857e242d8bfdd7f8bbe9045d0fa602a29
