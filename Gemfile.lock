@@ -609,7 +609,7 @@ DEPENDENCIES
   kramdown (~> 2.5, >= 2.5.2)
   kramdown-parser-gfm (~> 1.1)
   mutex_m (~> 0.2)
-  nomono (~> 1.1, >= 1.1.16)
+  nomono (~> 1.1, >= 1.1.17)
   ostruct (~> 0.6)
   rake (~> 13.0)
   rbs (>= 4.2.0)
